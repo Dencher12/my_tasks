@@ -68,6 +68,8 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
+    angular_rails_csrf (5.0.0)
+      railties (>= 3, < 8)
     bindex (0.8.1)
     bootsnap (1.11.1)
       msgpack (~> 1.2)
@@ -138,6 +140,8 @@ GEM
       nio4r (~> 2.0)
     racc (1.6.0)
     rack (2.2.3)
+    rack-cors (1.1.1)
+      rack (>= 2.0.0)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (7.0.2.3)
@@ -217,6 +221,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  angular_rails_csrf
   bootsnap
   capybara
   debug
@@ -224,6 +229,7 @@ DEPENDENCIES
   jbuilder
   pg (~> 1.1)
   puma (~> 5.0)
+  rack-cors
   rails (~> 7.0.2, >= 7.0.2.2)
   redis (~> 4.0)
   seed-fu

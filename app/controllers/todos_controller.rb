@@ -2,6 +2,7 @@ class TodosController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def create
+    @projects = Project.all
     if project_params[:id].present?
       @project = Project.find(project_params[:id])
     else
@@ -9,6 +10,8 @@ class TodosController < ApplicationController
     end
     @project.todos << Todo.new(text: todo_params[:text])
     @project.save
+
+    render 'projects/index', formats: [:json]
   end
 
   def update
